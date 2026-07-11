@@ -70,7 +70,10 @@ class LLMEngine:
         if not scheduled_sequences:
             return [], is_prefill
         # run the model
-        outputs = self.model_runner.call("run", scheduled_sequences, is_prefill)
+        outputs = self.model_runner.call(
+            "run",
+            {"scheduled_sequences": scheduled_sequences, "is_prefill": is_prefill},
+        )
         # Move outputs to CPU and convert them to a list
         if outputs is not None:
             outputs = outputs.cpu().tolist()

@@ -23,7 +23,7 @@ class Scheduler:
 
 
     def schedule(self) -> tuple[list[Sequence], bool]:
-        scheduled_sequences = []
+        scheduled_sequences: list[Sequence] = []
         current_scheduled_tokens = 0
         # try schedule for prefilling from waiting queue if not exceeding limits
         while self.waiting and len(scheduled_sequences) < self.max_num_sequences:

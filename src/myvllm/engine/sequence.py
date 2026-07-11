@@ -30,7 +30,7 @@ class Sequence:
         # num_cached_tokens = 0
         self.num_cached_tokens = 0
         # block_table
-        self.block_table = []
+        self.block_table: list[int] = []
         # sampling_params' related things
         self.temperature = sampling_params.temperature
         self.max_tokens = sampling_params.max_tokens
