@@ -72,7 +72,7 @@ class Sequence:
         full_blocks = int(math.floor(self.num_tokens / self.block_size))
         return len(self.token_ids[full_blocks * self.block_size : ])
 
-    def block(self, i):
+    def block(self, i) -> list[int]:
         assert 0 <= i < self.num_blocks, f"Block index {i} out of range [0, {self.num_blocks})"
         if i == self.num_blocks - 1:
             return self.token_ids[-self.last_block_num_tokens:]
