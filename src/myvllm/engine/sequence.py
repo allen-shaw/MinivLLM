@@ -68,7 +68,7 @@ class Sequence:
         return int(math.ceil(self.num_tokens / self.block_size))
 
     @property
-    def last_block_num_tokens(self):
+    def last_block_num_tokens(self) -> int:
         full_blocks = int(math.floor(self.num_tokens / self.block_size))
         return len(self.token_ids[full_blocks * self.block_size : ])
 
